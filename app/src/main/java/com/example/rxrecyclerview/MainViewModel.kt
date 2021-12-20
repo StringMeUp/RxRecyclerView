@@ -16,9 +16,7 @@ class MainViewModel : ViewModel() {
     private var disposable = CompositeDisposable()
     private val mockData = ArrayList<DisplayableItemRow>()
 
-    val headerData = MutableLiveData<DisplayableItemRow>()
-    val infoData = MutableLiveData<DisplayableItemRow>()
-    val profileData = MutableLiveData<DisplayableItemRow>()
+    val data = MutableLiveData<ArrayList<DisplayableItemRow>>()
 
     fun initRaw(context: Context){
         val gson = Gson()
@@ -45,21 +43,7 @@ class MainViewModel : ViewModel() {
             .toObservable()
             .subscribe(
                 { items ->
-                    items.map {
-                        when (it.type) {
-                            DisplayableItemRow.ItemType.HEADER -> {
-                                headerData.postValue(it)
-                            }
-
-                            DisplayableItemRow.ItemType.INFO -> {
-                                infoData.postValue(it)
-                            }
-
-                            DisplayableItemRow.ItemType.PROFILE -> {
-                                profileData.postValue(it)
-                            }
-                        }
-                    }
+                    data.postValue(items)
                 },
                 {
                     Log.d("THROWABLE", "getData: $it")

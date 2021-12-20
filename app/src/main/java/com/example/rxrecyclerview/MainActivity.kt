@@ -3,7 +3,10 @@ package com.example.rxrecyclerview
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.GeneratedAdapter
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.rxrecyclerview.base.RecyclerViewAdapter
 import com.example.rxrecyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         get() = _binding!!
 
     private lateinit var mainViewModel: MainViewModel
+    private lateinit var mainAdapter: RecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,26 +30,28 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
         val view = binding.root
         setContentView(view)
+
+        mainAdapter = RecyclerViewAdapter()
     }
 
     private fun setupViewBinding() {
         mainViewModel.apply {
             initRaw(context = this@MainActivity)
         }
+
+        binding.apply {
+            mainRecyclerView.apply {
+                layoutManager = LinearLayoutManager(this@MainActivity)
+                adapter = mainAdapter
+            }
+        }
     }
 
     private fun setupViewModelBinding() {
         mainViewModel.apply {
-            headerData.observeNotNull(this@MainActivity, {
+            data.observeNotNull(this@MainActivity, {
                 Log.d("DATA", "setupViewModelBinding: $it ")
-            })
-
-            infoData.observeNotNull(this@MainActivity, {
-                Log.d("DATA", "setupViewModelBinding: $it ")
-            })
-
-            profileData.observeNotNull(this@MainActivity, {
-                Log.d("DATA", "setupViewModelBinding: $it ")
+                mainAdapter.updateData(it)
             })
         }
     }
