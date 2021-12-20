@@ -1,0 +1,25 @@
+{
+  "mockup" : [
+    {
+      "type": "HEADER",
+      "isSkeletonVisible": "true",
+      "isExtended": "false",
+      "data": null,
+      "error": null
+    },
+    {
+      "type": "INFO",
+      "isSkeletonVisible": "true",
+      "isExtended": "false",
+      "data": null,
+      "error": null
+    },
+    {
+      "type": "PROFILE",
+      "isSkeletonVisible": "true",
+      "isExtended": "false",
+      "data": null,
+      "error": null
+    }
+  ]
+}
