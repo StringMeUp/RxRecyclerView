@@ -20,38 +20,13 @@ abstract class BaseAdapter<T>(val data: ArrayList<T>): RecyclerView.Adapter<Base
         onBindViewHolder(holder, item)
     }
 
-    //no need to override
     final override fun getItemCount(): Int = data.size
-    //no need to override
     final override fun getItemViewType(position: Int): Int = getItemViewType(data[position])
 
-    //to inherit
-    open fun getItemViewType(item: T) = 0
-    open fun onBindViewHolder(holder: BaseViewHolder, item: T) {}
-
-    // BASE VIEWHOLDER
     abstract class BaseViewHolder(binding: ViewBinding) : RecyclerView.ViewHolder(binding.root) {
         abstract fun bindData(item: DisplayableItemRow)
     }
-}
 
-                                            /*ALL HOLDERS*/
-
-
-class HeaderViewHolder(private val binding: HeaderLayoutBinding): BaseAdapter.BaseViewHolder(binding){
-    override fun bindData(item: DisplayableItemRow) {
-        binding.headerTitle.text = item.type.name
-    }
-}
-
-class InfoViewHolder(private val binding: InfoLayoutBinding): BaseAdapter.BaseViewHolder(binding){
-    override fun bindData(item: DisplayableItemRow) {
-        binding.infoTitle.text = item.type.name
-    }
-}
-
-class ProfileViewHolder(private val binding: ProfileLayoutBinding): BaseAdapter.BaseViewHolder(binding){
-    override fun bindData(item: DisplayableItemRow) {
-        binding.profileTitle.text = item.type.name
-    }
+    open fun getItemViewType(item: T) = 0
+    open fun onBindViewHolder(holder: BaseViewHolder, item: T) {}
 }

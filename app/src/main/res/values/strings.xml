@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">RxRecyclerView</string>
+    <string name="address">Address</string>
+    <string name="no_address_label">Address can\'t be shown.</string>
+    <string name="message_placeholder">This is just a placeholder message that resembles some info.</string>
 </resources>
