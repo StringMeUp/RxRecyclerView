@@ -15,7 +15,7 @@ class RecyclerViewAdapter: BaseAdapter<DisplayableItemRow>(DisplayableItemRow.cr
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when (viewType) {
-            DisplayableItemRow.ItemType.HEADER.ordinal -> {
+            DisplayableItemRow.ItemType.CARD.ordinal -> {
                  HeaderViewHolder(HeaderLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
             }
             DisplayableItemRow.ItemType.INFO.ordinal  -> {

@@ -8,7 +8,7 @@ data class DisplayableItemRow(
     var error: Throwable? = null
 ){
     enum class ItemType{
-        HEADER,
+        CARD,
         INFO,
         PROFILE
     }

@@ -1,4 +1,4 @@
-package com.example.rxrecyclerview
+package com.example.rxrecyclerview.utils
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData

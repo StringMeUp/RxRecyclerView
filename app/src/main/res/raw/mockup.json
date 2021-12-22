@@ -1,7 +1,7 @@
 {
   "mockup" : [
     {
-      "type": "HEADER",
+      "type": "CARD",
       "isSkeletonVisible": "true",
       "isExtended": "false",
       "data": null,

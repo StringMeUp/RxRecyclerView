@@ -3,11 +3,11 @@ package com.example.rxrecyclerview
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.GeneratedAdapter
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rxrecyclerview.base.RecyclerViewAdapter
 import com.example.rxrecyclerview.databinding.ActivityMainBinding
+import com.example.rxrecyclerview.utils.observeNotNull
 
 class MainActivity : AppCompatActivity() {
 

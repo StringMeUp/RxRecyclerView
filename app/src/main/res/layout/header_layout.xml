@@ -28,13 +28,14 @@
         app:srcCompat="@drawable/ic_edit" />
 
     <TextView
-        android:id="@+id/address_text_view"
+        android:id="@+id/card_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/bold"
         android:text="@string/address"
-        android:textStyle="bold"
+        android:textSize="16sp"
         app:layout_constrainedHeight="true"
         app:layout_constraintStart_toEndOf="@id/arrow_image_view"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,21 +46,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="2dp"
+        android:fontFamily="@font/light"
         android:text="@string/no_address_label"
         android:textSize="16sp"
         app:layout_constrainedHeight="true"
         app:layout_constraintStart_toEndOf="@id/arrow_image_view"
-        app:layout_constraintTop_toBottomOf="@id/address_text_view" />
+        app:layout_constraintTop_toBottomOf="@id/card_text_view" />
 
     <View
         android:id="@+id/spacer"
         android:layout_width="wrap_content"
-        android:layout_height="12dp"
+        android:layout_height="16dp"
         app:layout_constrainedHeight="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/address_not_found_text_view" />
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -74,7 +75,8 @@
             android:id="@+id/info_background_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="42dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baloon" />
@@ -83,21 +85,35 @@
             android:id="@+id/info_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="36dp"
+            android:fontFamily="@font/light"
             android:text="@string/message_placeholder"
+            android:visibility="visible"
             app:layout_constrainedWidth="true"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/info_background_image_view"
             app:layout_constraintStart_toStartOf="@+id/info_background_image_view"
             app:layout_constraintTop_toTopOf="@+id/info_background_image_view" />
+
+        <com.example.rxrecyclerview.utils.RxEditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:visibility="visible"
+            android:layout_marginBottom="8dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/info_background_image_view"
+            app:layout_constraintStart_toStartOf="@+id/info_background_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/info_background_image_view" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:id="@+id/bottom_decor_view"
         android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:background="@color/grey"
+        android:layout_height="12dp"
+        android:background="@drawable/gradient"
+        android:visibility="visible"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
