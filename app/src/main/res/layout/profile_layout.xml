@@ -33,6 +33,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/black"
+        android:textColor="@color/black"
         android:text="@string/address"
         android:textSize="16sp"
         app:layout_constrainedHeight="true"
@@ -64,7 +65,7 @@
     <View
         android:id="@+id/bottom_decor_view"
         android:layout_width="wrap_content"
-        android:layout_height="8dp"
+        android:layout_height="6dp"
         android:background="@drawable/gradient"
         android:visibility="visible"
         app:layout_constrainedHeight="true"
