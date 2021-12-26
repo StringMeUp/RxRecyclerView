@@ -18,13 +18,13 @@ class MainViewModel : ViewModel() {
 
     val data = MutableLiveData<ArrayList<DisplayableItemRow>>()
 
-    fun initRaw(context: Context){
+    fun initRaw(context: Context) {
         val gson = Gson()
         val mockDataJsonString = context.resources
             .openRawResource(R.raw.mockup)
             .bufferedReader().use { it.readText() }
 
-         val data = gson.fromJson<Mock>(
+        val data = gson.fromJson<Mock>(
             mockDataJsonString,
             Mock::class.java
         )
@@ -47,8 +47,22 @@ class MainViewModel : ViewModel() {
                 },
                 {
                     Log.d("THROWABLE", "getData: $it")
-
                 })
+    }
+
+    fun updateData(itemRow: DisplayableItemRow) {
+        val extended = !itemRow.isExtended
+
+        val modifiedItem = itemRow.copy(
+            type = itemRow.type,
+            isSkeletonVisible = false,
+            isExtended = extended,
+            data = itemRow.data,
+            error = itemRow.error
+        )
+
+        mockData[modifiedItem.type.ordinal] = modifiedItem
+        data.postValue(mockData)
     }
 
     override fun onCleared() {

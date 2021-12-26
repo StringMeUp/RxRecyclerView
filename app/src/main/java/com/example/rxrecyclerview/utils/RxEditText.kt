@@ -12,7 +12,7 @@ class RxEditText @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    var _binding: RxEditTextBinding? = null
+    private var _binding: RxEditTextBinding? = null
     val binding: RxEditTextBinding
         get() = _binding!!
 

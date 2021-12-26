@@ -32,6 +32,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         mainAdapter = RecyclerViewAdapter()
+        mainAdapter.observeClickListener().subscribe(
+            { Log.d("DATA", "click: $it ")
+                mainViewModel.updateData(it)
+            },
+            { Log.d("DATA", "clickError: $it ")}
+        )
     }
 
     private fun setupViewBinding() {
@@ -50,7 +56,6 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewModelBinding() {
         mainViewModel.apply {
             data.observeNotNull(this@MainActivity, {
-                Log.d("DATA", "setupViewModelBinding: $it ")
                 mainAdapter.updateData(it)
             })
         }
