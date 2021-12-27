@@ -5,128 +5,141 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/arrow_image_view"
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_down" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/pen_image_view"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:background="@drawable/icon_background"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:padding="4dp"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_edit" />
-
-    <TextView
-        android:id="@+id/card_text_view"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/bold"
-        android:text="@string/address"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintStart_toEndOf="@id/arrow_image_view"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/address_not_found_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="2dp"
-        android:fontFamily="@font/light"
-        android:text="@string/no_address_label"
-        android:textSize="16sp"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintStart_toEndOf="@id/arrow_image_view"
-        app:layout_constraintTop_toBottomOf="@id/card_text_view" />
-
-    <View
-        android:id="@+id/spacer"
-        android:layout_width="wrap_content"
-        android:layout_height="4dp"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/address_not_found_text_view" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/content_wrapper"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@id/bottom_decor_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spacer">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/info_background_image_view"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="42dp"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baloon" />
-
-        <TextView
-            android:id="@+id/info_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/light"
-            android:gravity="center"
-            android:maxLines="1"
-            android:textColor="@color/yelow"
-            android:text="@string/message_placeholder"
-            android:visibility="visible"
-            app:layout_constrainedWidth="true"
-            app:layout_constraintBottom_toBottomOf="@+id/info_background_image_view"
-            app:layout_constraintEnd_toEndOf="@+id/info_background_image_view"
-            app:layout_constraintStart_toStartOf="@+id/info_background_image_view"
-            app:layout_constraintTop_toTopOf="@+id/info_background_image_view" />
-
-        <com.example.rxrecyclerview.utils.RxEditText
-            android:id="@+id/rxEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="8dp"
-            android:visibility="visible"
-            app:layout_constrainedHeight="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/info_background_image_view"
-            app:layout_constraintTop_toBottomOf="@+id/info_background_image_view" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <View
-        android:id="@+id/bottom_decor_view"
-        android:layout_width="wrap_content"
-        android:layout_height="6dp"
-        android:background="@drawable/gradient"
-        android:visibility="visible"
-        app:layout_constrainedHeight="true"
+        android:layout_margin="4dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parent_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/arrow_image_view"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_arrow_down" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pen_image_view"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/icon_background"
+                android:padding="4dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <TextView
+                android:id="@+id/card_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/bold"
+                android:text="@string/address"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintStart_toEndOf="@id/arrow_image_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/address_not_found_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/light"
+                android:text="@string/no_address_label"
+                android:textSize="16sp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintStart_toEndOf="@id/arrow_image_view"
+                app:layout_constraintTop_toBottomOf="@id/card_text_view" />
+
+            <View
+                android:id="@+id/spacer"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address_not_found_text_view" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/content_wrapper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spacer">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/info_background_image_view"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="42dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baloon" />
+
+                <TextView
+                    android:id="@+id/info_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/light"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/message_placeholder"
+                    android:textColor="@color/yelow"
+                    android:visibility="visible"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/info_background_image_view"
+                    app:layout_constraintEnd_toEndOf="@+id/info_background_image_view"
+                    app:layout_constraintStart_toStartOf="@+id/info_background_image_view"
+                    app:layout_constraintTop_toTopOf="@+id/info_background_image_view" />
+
+                <com.example.rxrecyclerview.utils.RxEditText
+                    android:id="@+id/rxEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="visible"
+                    app:layout_constrainedHeight="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/info_background_image_view"
+                    app:layout_constraintTop_toBottomOf="@+id/info_background_image_view" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
