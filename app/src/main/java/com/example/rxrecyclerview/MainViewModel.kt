@@ -37,19 +37,6 @@ class MainViewModel : ViewModel() {
         mapData()
     }
 
-    private fun mapData() {
-        disposable += Single.just(mockData)
-            .onErrorResumeNext { Single.just(arrayListOf()) }
-            .toObservable()
-            .subscribe(
-                { items ->
-                    data.postValue(items)
-                },
-                {
-                    Log.d("THROWABLE", "getData: $it")
-                })
-    }
-
     fun updateData(itemRow: DisplayableItemRow) {
         val extended = !itemRow.isExtended
 
@@ -63,6 +50,19 @@ class MainViewModel : ViewModel() {
 
         mockData[modifiedItem.type.ordinal] = modifiedItem
         data.postValue(mockData)
+    }
+
+    private fun mapData() {
+        disposable += Single.just(mockData)
+            .onErrorResumeNext { Single.just(arrayListOf()) }
+            .toObservable()
+            .subscribe(
+                { items ->
+                    data.postValue(items)
+                },
+                {
+                    Log.d("THROWABLE", "getData: $it")
+                })
     }
 
     override fun onCleared() {

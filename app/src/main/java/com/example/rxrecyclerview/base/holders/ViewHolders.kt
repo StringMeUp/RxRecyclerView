@@ -14,6 +14,7 @@ class HeaderViewHolder(private val binding: HeaderLayoutBinding): BaseAdapter.Ba
 
         binding.apply {
             contentWrapper.isVisible = item.isExtended
+            penImageView.isEnabled = item.isExtended
         }
     }
 }
@@ -22,6 +23,10 @@ class InfoViewHolder(private val binding: InfoLayoutBinding): BaseAdapter.BaseVi
     override fun bindData(item: DisplayableItemRow, performClick: () -> Unit) {
         binding.infoTextView.text = item.type.name.lowercase().replaceFirstChar { it.uppercase() }
         itemView.setOnClickListener { performClick.invoke() }
+
+        binding.apply {
+            penImageView.isEnabled = item.isExtended
+        }
     }
 }
 
@@ -29,5 +34,9 @@ class ProfileViewHolder(private val binding: ProfileLayoutBinding): BaseAdapter.
     override fun bindData(item: DisplayableItemRow, performClick: () -> Unit) {
         binding.profileTextView.text = item.type.name.lowercase().replaceFirstChar { it.uppercase() }
         itemView.setOnClickListener { performClick.invoke() }
+
+        binding.apply {
+            penImageView.isEnabled = item.isExtended
+        }
     }
 }
