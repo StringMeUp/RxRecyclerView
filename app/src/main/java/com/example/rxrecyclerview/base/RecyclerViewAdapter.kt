@@ -2,6 +2,7 @@ package com.example.rxrecyclerview.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.rxrecyclerview.R
 import com.example.rxrecyclerview.base.holders.HeaderViewHolder
 import com.example.rxrecyclerview.base.holders.InfoViewHolder
 import com.example.rxrecyclerview.base.holders.ProfileViewHolder
