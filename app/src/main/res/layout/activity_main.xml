@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_bg_gradient"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -19,41 +20,65 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_pic_image_view"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_margin="32dp"
+                android:src="@drawable/profile_pic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/regular"
+                android:text="@string/greetings"
+                app:layout_constraintStart_toEndOf="@+id/profile_pic_image_view"
+                app:layout_constraintTop_toTopOf="@+id/profile_pic_image_view" />
+
+            <TextView
+                android:id="@+id/user_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/black"
+                android:gravity="top"
+                android:text="@string/user_name_placeholder"
+                app:layout_constraintStart_toEndOf="@+id/profile_pic_image_view"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <ImageView
+                android:id="@+id/bank_logo_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="36dp"
+                android:alpha="0.7"
+                android:src="@drawable/ic_bank_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <ImageView
                 android:id="@+id/cards_image_view"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
-                android:paddingBottom="12dp"
-                android:src="@drawable/cards"
+                android:layout_marginTop="30dp"
+                android:padding="12dp"
+                android:src="@drawable/ic_bank_card"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="12dp"
-                android:src="@drawable/banklogo"
-                app:layout_constraintBottom_toTopOf="@+id/main_recycler_view"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cards_image_view" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="60dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="12dp"
-                android:alpha="0.7"
-                android:src="@drawable/logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cards_image_view" />
+                app:layout_constraintTop_toBottomOf="@+id/profile_pic_image_view" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/main_recycler_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="12dp"
                 android:overScrollMode="never"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

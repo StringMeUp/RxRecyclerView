@@ -13,7 +13,6 @@ class HeaderViewHolder(private val binding: HeaderLayoutBinding): BaseAdapter.Ba
 
         binding.apply {
             contentWrapper.isVisible = item.isExtended
-            penImageView.isEnabled = item.isExtended
 
             binding.parentContainer.setOnClickListener {
                 BaseAdapter.invokeClickOnBackground(performClick)
@@ -30,7 +29,6 @@ class InfoViewHolder(private val binding: InfoLayoutBinding): BaseAdapter.BaseVi
         itemView.setOnClickListener { performClick.invoke() }
 
         binding.apply {
-            penImageView.isEnabled = item.isExtended
 
             binding.parentContainer.setOnClickListener {
                 BaseAdapter.invokeClickOnBackground(performClick)
@@ -47,7 +45,6 @@ class ProfileViewHolder(private val binding: ProfileLayoutBinding): BaseAdapter.
         itemView.setOnClickListener { performClick.invoke() }
 
         binding.apply {
-            penImageView.isEnabled = item.isExtended
 
             binding.parentContainer.setOnClickListener {
                 BaseAdapter.invokeClickOnBackground(performClick)

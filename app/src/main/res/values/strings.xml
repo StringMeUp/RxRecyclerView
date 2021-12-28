@@ -5,4 +5,6 @@
     <string name="message_placeholder">Please update Address!</string>
     <string name="info">Info</string>
     <string name="native_apps_label">Powered by:</string>
+    <string name="greetings">Welcome back</string>
+    <string name="user_name_placeholder">Samir</string>
 </resources>

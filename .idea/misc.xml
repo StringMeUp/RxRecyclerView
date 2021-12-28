@@ -5,18 +5,25 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.335" />
         <entry key="app/src/main/res/drawable-v24/pen_default.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/drawable/background_gradient.xml" value="0.2682291666666667" />
         <entry key="app/src/main/res/drawable/edit_text_background.xml" value="0.25729166666666664" />
         <entry key="app/src/main/res/drawable/edit_text_default.xml" value="0.203125" />
         <entry key="app/src/main/res/drawable/edit_text_selected.xml" value="0.203125" />
         <entry key="app/src/main/res/drawable/gradient.xml" value="0.2671875" />
         <entry key="app/src/main/res/drawable/ic_baloon.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/res/drawable/ic_bank_card.xml" value="0.2682291666666667" />
+        <entry key="app/src/main/res/drawable/ic_bank_logo.xml" value="0.2682291666666667" />
+        <entry key="app/src/main/res/drawable/ic_card.xml" value="0.2682291666666667" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.21145833333333333" />
+        <entry key="app/src/main/res/drawable/ic_info.xml" value="0.2682291666666667" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.2682291666666667" />
         <entry key="app/src/main/res/drawable/icon_background.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/drawable/pen_selected.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/drawable/shadow_effect.xml" value="0.3104166666666667" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24270833333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/header_layout.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/info_layout.xml" value="0.24270833333333333" />
+        <entry key="app/src/main/res/layout/info_layout.xml" value="0.5050377833753149" />
         <entry key="app/src/main/res/layout/profile_layout.xml" value="0.375" />
         <entry key="app/src/main/res/layout/rx_edit_text.xml" value="0.4187956204379562" />
       </map>
