@@ -16,4 +16,5 @@
     <color name="red">#CF3A3A</color>
     <color name="yelow">#FFEB3B</color>
     <color name="card_fill_color">#593cf7</color>
+    <color name="error_color">#FFFF2B0F</color>
 </resources>

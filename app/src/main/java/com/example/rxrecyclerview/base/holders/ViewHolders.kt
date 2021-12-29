@@ -13,7 +13,6 @@ class HeaderViewHolder(private val binding: HeaderLayoutBinding): BaseAdapter.Ba
 
         binding.apply {
             contentWrapper.isVisible = item.isExtended
-
             binding.parentContainer.setOnClickListener {
                 BaseAdapter.invokeClickOnBackground(performClick)
                 BaseAdapter.animateArrow(item.isExtended, arrowImageView)

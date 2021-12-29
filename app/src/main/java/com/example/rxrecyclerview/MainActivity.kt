@@ -1,6 +1,8 @@
 package com.example.rxrecyclerview
 
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -32,12 +34,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         mainAdapter = RecyclerViewAdapter()
-        mainAdapter.observeClickListener().subscribe(
-            { Log.d("DATA", "click: $it ")
-                mainViewModel.updateData(it)
-            },
-            { Log.d("DATA", "clickError: $it ")}
-        )
+        mainAdapter.observeClickListener().subscribe {
+            TransitionManager.beginDelayedTransition(binding.mainRecyclerView)
+            mainViewModel.updateData(it)
+        }
     }
 
     private fun setupViewBinding() {

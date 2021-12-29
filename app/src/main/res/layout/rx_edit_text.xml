@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:background="@drawable/edit_text_background"
-        android:fontFamily="@font/thin"
+        android:fontFamily="@font/light"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:hint="@string/address"
